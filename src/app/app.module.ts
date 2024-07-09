@@ -3,19 +3,18 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-
-import { ButtonModule } from 'primeng/button';
-import { MenuComponent } from './shared/components/menu/menu.component';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MenuComponent
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ButtonModule
+
+    SharedModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
