@@ -17,15 +17,15 @@
     />
   </div>
   <div class="p-toolbar-group-end">
-    <p-button label="By Name" class="mr-2" icon="pi pi-sort" />
-    <p-button label="By Ability" class="mr-2" icon="pi pi-sort" />
-    <p-button label="By Color" class="mr-2" icon="pi pi-sort" />
+    <p-button (onClick)="changeOrder('name')" label="By Name" class="mr-2" icon="pi pi-sort" />
+    <p-button (onClick)="changeOrder('canFly')" label="By Ability" class="mr-2" icon="pi pi-sort" />
+    <p-button (onClick)="changeOrder('color')" label="By Color" class="mr-2" icon="pi pi-sort" />
   </div>
 </p-toolbar>
 
 <div class="grid">
   <div class="col mt-2">
-    <p-table [value]="hero" [tableStyle]="{ 'min-width': '50rem' }">
+    <p-table [value]="hero | sortBy: sortValue" [tableStyle]="{ 'min-width': '50rem' }">
       <ng-template pTemplate="header">
         <tr>
           <th>Name</th>

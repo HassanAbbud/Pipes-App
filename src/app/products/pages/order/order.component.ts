@@ -29,7 +29,13 @@ export class OrderComponent {
       canFly: true,
       color: Color.green,
     },
-];
+  ];
+
+  public sortValue?: keyof Hero|null|undefined = null;
+
+  changeOrder(value:  keyof Hero|null|undefined){
+    this.sortValue = value;
+  }
 
   toggleCase() {
     return this.isUpperCase = !this.isUpperCase
