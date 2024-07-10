@@ -6,55 +6,28 @@ import { MenuItem } from 'primeng/api';
   templateUrl: './menu.component.html',
 })
 export class MenuComponent {
-  items: MenuItem[] | undefined;
+  public items: MenuItem[] | undefined;
 
   ngOnInit() {
     this.items = [
-        {
-            label: 'Home',
-            icon: 'pi pi-home'
-        },
-        {
-            label: 'Features',
-            icon: 'pi pi-star'
-        },
-        {
-            label: 'Projects',
-            icon: 'pi pi-search',
-            items: [
-                {
-                    label: 'Components',
-                    icon: 'pi pi-bolt'
-                },
-                {
-                    label: 'Blocks',
-                    icon: 'pi pi-server'
-                },
-                {
-                    label: 'UI Kit',
-                    icon: 'pi pi-pencil'
-                },
-                {
-                    label: 'Templates',
-                    icon: 'pi pi-palette',
-                    items: [
-                        {
-                            label: 'Apollo',
-                            icon: 'pi pi-palette'
-                        },
-                        {
-                            label: 'Ultima',
-                            icon: 'pi pi-palette'
-                        }
-                    ]
-                }
-            ]
-        },
-        {
-            label: 'Contact',
-            icon: 'pi pi-envelope'
-        }
-    ]
-}
-
+      {
+        label: 'Pages',
+        icon: 'pi pi-search',
+        items: [
+          {
+            label: 'Basics',
+            routerLink: '/basics',
+          },
+          {
+            label: 'Numbers',
+            routerLink: '/numbers',
+          },
+          {
+            label: 'Uncommon',
+            routerLink: '/uncommon',
+          },
+        ],
+      },
+    ];
+  }
 }
