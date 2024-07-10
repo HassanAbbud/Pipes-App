@@ -1,6 +1,6 @@
 <p-panel header="Custom Pipes" class="p-1">
   <p>
-    Created pipes by the {{"user" | toggleCasePipe: isUpperCase}}
+    Created pipes by the {{"user" | toggleCase: isUpperCase}}
   </p>
 </p-panel>
 
@@ -14,3 +14,27 @@
       <p-button class="mr-2" icon="pi pi-upload" />
   </div>
 </p-toolbar>
+
+<div class="grid">
+  <div class="col mt-2">
+    <p-table [value]="hero" [tableStyle]="{ 'min-width': '50rem' }">
+      <ng-template pTemplate="header">
+          <tr>
+              <th>Name</th>
+              <th>Can Fly</th>
+              <th>Color</th>
+
+          </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-hero>
+          <tr>
+              <td>{{ hero.name }}</td>
+              <td>{{ hero.canFly | canFly}}</td>
+              <td>{{ hero.color }}</td>
+
+          </tr>
+      </ng-template>
+    </p-table>
+  </div>
+</div>
+
