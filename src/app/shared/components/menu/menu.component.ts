@@ -28,6 +28,16 @@ export class MenuComponent {
           },
         ],
       },
+      {
+        label: 'Custom Pipes',
+        icon: 'pi pi-cog',
+        items: [
+          {
+            label: 'Custom',
+            routerLink: '/custom',
+          }
+        ]
+      }
     ];
   }
 }
