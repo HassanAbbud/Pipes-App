@@ -11,8 +11,8 @@ export class MenuComponent {
   ngOnInit() {
     this.items = [
       {
-        label: 'Pages',
-        icon: 'pi pi-search',
+        label: 'Angular Pipes',
+        icon: 'pi pi-desktop',
         items: [
           {
             label: 'Basics',
