@@ -1,17 +1,25 @@
 <p-panel header="Custom Pipes" class="p-1">
   <p>
-    Created pipes by the {{"user" | toggleCase: isUpperCase}}
+    Created pipes by the {{ "user" | toggleCase : isUpperCase }} - these pipes
+    can be created and defined by the user to transform data however they need.
+    A new .ts file is created with the keyword "pipe" and it is decorated with
+    &#64;Pipe. The functionality is defined through the method "transform()".
+    The custom pipe has to be declared in the relevant module.
   </p>
 </p-panel>
 
 <p-toolbar>
   <div class="p-toolbar-group-start">
-    <p-button (onClick)="toggleCase()" icon="pi pi-search" label="Toggle Case" />
+    <p-button
+      (onClick)="toggleCase()"
+      icon="pi pi-search"
+      label="Toggle Case"
+    />
   </div>
   <div class="p-toolbar-group-end">
-      <p-button class="mr-2" icon="pi pi-plus" />
-      <p-button class="mr-2" icon="pi pi-print" />
-      <p-button class="mr-2" icon="pi pi-upload" />
+    <p-button label="By Name" class="mr-2" icon="pi pi-sort" />
+    <p-button label="By Ability" class="mr-2" icon="pi pi-sort" />
+    <p-button label="By Color" class="mr-2" icon="pi pi-sort" />
   </div>
 </p-toolbar>
 
@@ -19,22 +27,19 @@
   <div class="col mt-2">
     <p-table [value]="hero" [tableStyle]="{ 'min-width': '50rem' }">
       <ng-template pTemplate="header">
-          <tr>
-              <th>Name</th>
-              <th>Can Fly</th>
-              <th>Color</th>
-
-          </tr>
+        <tr>
+          <th>Name</th>
+          <th>Can Fly</th>
+          <th>Color</th>
+        </tr>
       </ng-template>
       <ng-template pTemplate="body" let-hero>
-          <tr>
-              <td>{{ hero.name }}</td>
-              <td>{{ hero.canFly | canFly}}</td>
-              <td>{{ hero.color }}</td>
-
-          </tr>
+        <tr>
+          <td>{{ hero.name }}</td>
+          <td>{{ hero.canFly | canFly }}</td>
+          <td>{{ hero.color }}</td>
+        </tr>
       </ng-template>
     </p-table>
   </div>
 </div>
-
